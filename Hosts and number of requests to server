@@ -1,0 +1,35 @@
+
+
+#read the string filename
+filename = input()
+
+myFile = open(filename, "r+")
+info = myFile.readlines()
+
+myList = []
+myList2 = []
+
+for i in info:
+    address = i[:i.index(" ")]
+    myList.append(address)
+
+myDict = {x: myList.count(x) for x in myList}
+
+for a in myDict:
+    myList2.append(a + " " + str(myDict[a]))
+
+myList2.sort()
+
+f = open("records_" + filename, "w+")
+
+for i in myList2:
+
+    f.write(i + '\n')
+
+f.close()
+myFile.close()
+
+
+…
+
+…
